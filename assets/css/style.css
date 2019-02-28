@@ -1,0 +1,67 @@
+.navcolor{
+background-color:rgb(44, 62, 80);
+background-color: rgba(red, green, blue, 0.6);
+}
+body{
+    background-image:url("../images/background2.jpg");
+    background-position:center;
+    background-size:repeat;
+    background-color:rgba(255, 255, 255, 0.5);
+}
+.backChange{
+
+    background-color:rgba(254, 254, 254, 0.5);
+    /* background-image:url("../images/photo-1532274402911-5a369e4c4bb5.jpeg");
+    background-position:center;
+    background-size:cover; */
+}
+
+.logo{
+    border-radius:10px;
+    border:1px solid white;
+    margin-top:5px;
+   
+}
+.secondrow{
+    background-color:rgb(56, 87, 134);
+    margin:0;
+    padding:0;
+    color:white;
+}
+.welcome{
+    text-transform: uppercase;
+    color:rgb(56, 87, 134);
+    background-color:rgba(255, 255, 255, 0.6);
+}
+.displayvideo{
+    background-color:rgb(180, 177, 189); 
+    height:500px;
+}
+hr{
+    margin:0;
+    padding:0;
+}
+
+.myButton {
+	-moz-box-shadow:inset 0px 34px 0px -15px rgb(44, 62, 80);;
+	-webkit-box-shadow:inset 0px 34px 0px -15px rgb(54, 78, 102);
+	box-shadow:inset 0px 34px 0px -15px #3a9cb5;
+	background-color:rgb(44, 62, 80);
+	/* border:1px solid #241d13; */
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:9px 23px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #1d587a;
+}
+.myButton:hover {
+	background-color:#3266b3;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
