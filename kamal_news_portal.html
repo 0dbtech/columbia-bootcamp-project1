@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Favorite Movies</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+  <style>
+    img {
+      height: 40px;
+      width: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Basic Table</h2>
+    <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
+    <table class="table">
+      <thead>
+        <tr>
+          <!-- The scope attribute specifies that this is a header for a column -->
+          <th scope="col">News Source</th>
+          <th scope="col">Thumbnail</th>
+          <th scope="col">Link to Page</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- the following <tr> row was per of the original code given to us by the class
+        <tr>
+          <td>Interstellar</td>
+          <td>2014</td>
+          <td>Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow</td>
+        </tr> -->
+        <!-- Insert additional movie rows here -->
+      </tbody>
+    </table>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // News API testing by Kamal. Not part of the class
+
+    // this API is for "I want to show my users live top and breaking news headlines"
+    // by adding "Sources Parameter", we can select a news outlet i.e. sources=bbc-news
+    var queryURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=1f24541f63fa4ac79c46c7df37094bed"; //anything
+    queryURL = "https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=1f24541f63fa4ac79c46c7df37094bed"; //CNN
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function (response) {
+      console.log(response);
+    });
+
+    // this API is for "I want to search across every news article that mentions a specific topic or keyword (limited to the last 6 months)."
+    queryURL =
+      "https://newsapi.org/v2/everything?q=michael-cohen&from=2019-03-01&sortBy=popularity?sources=bbc-news&apiKey=1f24541f63fa4ac79c46c7df37094bed&limit=10";
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function (response) {
+      console.log(response);
+      for (var i = 0; i < 20; i++) {
+        console.log(response.articles[i].source.name);
+        //console.log(response.articles[i].author);
+        console.log(response.articles[i].title);
+        //console.log(response.articles[i].content);
+        console.log(response.articles[i].urlToImage);
+        console.log("---------------------------");
+
+
+        // Create a new table row element
+        var tRow = $("<tr>");
+
+        // Methods run on jQuery selectors return the selector they we run on
+        // This is why we can create and save a reference to a td in the same statement we update its text
+        var sourceID = $("<td>").text(response.articles[i].source.name);
+        var imgLink = $("<td>").html('<img src="' + response.articles[i].urlToImage + '"></td></tr>');
+        var pageLink = $("<td>").html('<a href="' + response.articles[i].url + '" target="_blank">' + response.articles[i].title + '</a></td></tr>');
+
+            
+        // Append the newly created table data to the table row
+        tRow.append(sourceID, imgLink, pageLink);
+        // Append the table row to the table body
+        $("tbody").append(tRow);
+      }
+    });
+
+    // CNN Ends Here
+
+    /* the following commented section was the original class demo
+
+    // The below code fills in the first row of the table
+    var movie = "Mr. Nobody";
+    var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function (response) {
+      // Create a new table row element
+      var tRow = $("<tr>");
+
+      // Methods run on jQuery selectors return the selector they we run on
+      // This is why we can create and save a reference to a td in the same statement we update its text
+      var titleTd = $("<td>").text(response.Title);
+      var yearTd = $("<td>").text(response.Year);
+      var actorsTd = $("<td>").text(response.Actors);
+
+      // Append the newly created table data to the table row
+      tRow.append(titleTd, yearTd, actorsTd);
+      // Append the table row to the table body
+      $("tbody").append(tRow);
+    });
+
+    var movie = "The Little Mermaid";
+    var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function (response) {
+      var tBody = $("tbody");
+      var tRow = $("<tr>");
+      // Methods run on jQuery selectors return the selector they we run on
+      // This is why we can create and save a reference to a td in the same statement we update its text
+      var titleTd = $("<td>").text(response.Title);
+      var yearTd = $("<td>").text(response.Year);
+      var actorsTd = $("<td>").text(response.Actors);
+      // Append the newly created table data to the table row
+      tRow.append(titleTd, yearTd, actorsTd);
+      // Append the table row to the table body
+      tBody.append(tRow);
+    });
+
+    var movie = "The Lion King";
+    var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function (response) {
+      var tBody = $("tbody");
+      var tRow = $("<tr>");
+      // Methods run on jQuery selectors return the selector they we run on
+      // This is why we can create and save a reference to a td in the same statement we update its text
+      var titleTd = $("<td>").text(response.Title);
+      var yearTd = $("<td>").text(response.Year);
+      var actorsTd = $("<td>").text(response.Actors);
+      // Append the newly created table data to the table row
+      tRow.append(titleTd, yearTd, actorsTd);
+      // Append the table row to the table body
+      tBody.append(tRow);
+    });
+
+    class demo ends here */
+
+  </script>
+</body>
+
+</html>
