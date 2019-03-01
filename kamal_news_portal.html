@@ -53,8 +53,7 @@
     });
 
     // this API is for "I want to search across every news article that mentions a specific topic or keyword (limited to the last 6 months)."
-    queryURL =
-      "https://newsapi.org/v2/everything?q=michael-cohen&from=2019-03-01&sortBy=popularity?sources=bbc-news&apiKey=1f24541f63fa4ac79c46c7df37094bed&limit=10";
+    queryURL = "https://newsapi.org/v2/everything?q=bill gates&from=2019-03-01&sortBy=popularity?sources=bbc-news&apiKey=1f24541f63fa4ac79c46c7df37094bed&limit=10";
 
     $.ajax({
       url: queryURL,
@@ -88,73 +87,6 @@
     });
 
     // CNN Ends Here
-
-    /* the following commented section was the original class demo
-
-    // The below code fills in the first row of the table
-    var movie = "Mr. Nobody";
-    var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
-
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function (response) {
-      // Create a new table row element
-      var tRow = $("<tr>");
-
-      // Methods run on jQuery selectors return the selector they we run on
-      // This is why we can create and save a reference to a td in the same statement we update its text
-      var titleTd = $("<td>").text(response.Title);
-      var yearTd = $("<td>").text(response.Year);
-      var actorsTd = $("<td>").text(response.Actors);
-
-      // Append the newly created table data to the table row
-      tRow.append(titleTd, yearTd, actorsTd);
-      // Append the table row to the table body
-      $("tbody").append(tRow);
-    });
-
-    var movie = "The Little Mermaid";
-    var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
-
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function (response) {
-      var tBody = $("tbody");
-      var tRow = $("<tr>");
-      // Methods run on jQuery selectors return the selector they we run on
-      // This is why we can create and save a reference to a td in the same statement we update its text
-      var titleTd = $("<td>").text(response.Title);
-      var yearTd = $("<td>").text(response.Year);
-      var actorsTd = $("<td>").text(response.Actors);
-      // Append the newly created table data to the table row
-      tRow.append(titleTd, yearTd, actorsTd);
-      // Append the table row to the table body
-      tBody.append(tRow);
-    });
-
-    var movie = "The Lion King";
-    var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
-
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function (response) {
-      var tBody = $("tbody");
-      var tRow = $("<tr>");
-      // Methods run on jQuery selectors return the selector they we run on
-      // This is why we can create and save a reference to a td in the same statement we update its text
-      var titleTd = $("<td>").text(response.Title);
-      var yearTd = $("<td>").text(response.Year);
-      var actorsTd = $("<td>").text(response.Actors);
-      // Append the newly created table data to the table row
-      tRow.append(titleTd, yearTd, actorsTd);
-      // Append the table row to the table body
-      tBody.append(tRow);
-    });
-
-    class demo ends here */
 
   </script>
 </body>
