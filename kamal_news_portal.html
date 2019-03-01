@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Favorite Movies</title>
+  <title>News Portal</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
   <style>
     img {
@@ -76,7 +76,7 @@
         // Methods run on jQuery selectors return the selector they we run on
         // This is why we can create and save a reference to a td in the same statement we update its text
         var sourceID = $("<td>").text(response.articles[i].source.name);
-        var imgLink = $("<td>").html('<img src="' + response.articles[i].urlToImage + '"></td></tr>');
+        var imgLink = $("<td>").html('<a href="' + response.articles[i].url  + '" target="_blank">'+ '<img src="' + response.articles[i].urlToImage + '"></a></td></tr>');
         var pageLink = $("<td>").html('<a href="' + response.articles[i].url + '" target="_blank">' + response.articles[i].title + '</a></td></tr>');
 
             
