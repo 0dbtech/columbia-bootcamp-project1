@@ -27,13 +27,11 @@ $(".form-control").on("click", function () {
 dataRef.ref().on("value", function (snapshot) {
     $("#feedback-table > tbody").empty();
     snapshot.forEach(function (childSnapshot) {
-
         var newRow = $("<tr>").append(
             $("<td>").text(childSnapshot.val().conName),
             $("<td>").text(childSnapshot.val().conRating),
             $("<td>").text(childSnapshot.val().conFeedback)
         );
-
         // Append the new row to the table
         $("#feedback-table > tbody").append(newRow);
     });
