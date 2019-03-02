@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>News Portal</title>
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <!-- style sheets -->
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+  <!-- style needed for this page -->
+  <style>
+    img {
+      height: 40px;
+      width: 40px;
+    }
+    .btn {
+      margin-right:5px;
+      font-size: 10px;
+    }
+    .form-control {
+      width: 400px;
+      margin: 10px 10px;
+    }
+    h2 {
+      font-size: 24px;
+      line-height: 30px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+    .bold-font,
+    #searchTerm,
+    #add-search-btn {
+      display: inline-block;      
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }    
+    .search-row {      
+      margin: auto;
+      vertical-align: center;
+      border: 1px solid black;
+      margin-bottom: 10px;
+      padding: 0 10px 0 10px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- search bar-->
+    <h2>News Search Portal</h2>
+    <div class="row" id="search-bar">
+      <table class="search-row">
+        <td><label for="userName-input" class="bold-font">What are you looking for?</label></td>
+        <td><input class="form-control " id="searchTerm" placeholder="" type="text"></td>
+        <td><button class="btn btn-info" id="add-search-btn">SEARCH</button></td>
+      </table>
+    </div>
+    <!-- button section-->
+    <div class="row">
+      <div class="col-md-5">
+        <button class="btn btn-primary float-left" id="add-liberal-btn">LIBERAL</button>
+        <button class="btn btn-primary float-left" id="add-msnbc-btn">MSNBC</button>
+        <button class="btn btn-primary float-left" id="add-cnn-btn">CNN</button>
+        <button class="btn btn-primary float-left" id="add-washington-btn">THE WASHINGTON POST</button>
+      </div>
+      <div class="col-md-2"> </div> <!-- empty dev to separate left & right -->
+      <div class="col-md-5">
+        <button class="btn btn-danger float-right" id="add-conservative-btn">CONSERVATIVE</button>
+        <button class="btn btn-danger float-right" id="add-foxnews-btn">FOX NEWS</button>
+        <button class="btn btn-danger float-right" id="add-national-btn">NATIONAL REVIEW</button>
+        <button class="btn btn-danger float-right" id="add-breitbart-btn">BREITBART NEWS</button>
+      </div>
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <!-- The scope attribute specifies that this is a header for a column -->
+          <th scope="col">News Source</th>
+          <th scope="col">Summary</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Insert news items rows here -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- bootstrap jquery-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+
+  <!-- jquery library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- javascript -->
+  <script src="assets/javascript/kamal_newsportal_app.js"></script>
+</body>
+
+</html>
